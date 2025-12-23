@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdullah Rasheed | Frontend Web Developer</title>
+
+<style>
+:root{
+  --bg:#0f2027;
+  --bg2:#203a43;
+  --bg3:#2c5364;
+  --text:#ffffff;
+  --accent:#00e5ff;
+  --card:rgba(255,255,255,0.1);
+}
+
+.light{
+  --bg:#f5f7fa;
+  --bg2:#e4ebf5;
+  --bg3:#dbe4ee;
+  --text:#111;
+  --accent:#0077ff;
+  --card:#ffffff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:linear-gradient(135deg,var(--bg),var(--bg2),var(--bg3));
+  color:var(--text);
+  transition:0.4s;
+}
+
+/* TOGGLE */
+.toggle{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:var(--accent);
+  color:#000;
+  padding:8px 15px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:14px;
+  z-index:1000;
+}
+
+/* STICKY NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  padding:12px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+/* HERO (SPACE KAM KIYA) */
+.hero{
+  min-height:85vh;
+  text-align:center;
+  padding:80px 20px 40px;
+}
+
+.hero span{color:var(--accent);}
+.hero p{
+  max-width:500px;
+  margin:12px auto;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  padding:12px 30px;
+  background:linear-gradient(45deg,var(--accent),#00c853);
+  color:#000;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
+  transition:0.4s;
+}
+
+.btn:hover{
+  transform:translateY(-4px) scale(1.08);
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  background:linear-gradient(45deg,#ff6f00,#ff1744);
+  color:#fff;
+}
+
+/* SECTIONS (TOP SPACE KAM) */
+section{
+  padding:60px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+section h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:var(--accent);
+}
+
+/* CARDS */
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:15px;
+  margin:20px 0;
+  transition:0.4s;
+}
+.card:hover{transform:translateY(-10px);}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.skill{
+  margin:10px;
+  padding:15px 25px;
+  border-radius:25px;
+  background:var(--card);
+  transition:0.3s;
+}
+.skill:hover{
+  background:var(--accent);
+  color:#000;
+}
+
+/* CONTACT */
+form{
+  max-width:500px;
+  margin:auto;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border:none;
+  border-radius:8px;
+}
+textarea{resize:none;}
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:var(--accent);
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:15px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+  z-index:1000;
+}
+
+/* SCROLL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero{
+    min-height:80vh;
+    padding:70px 15px 30px;
+  }
+  h1{font-size:28px;}
+  .navbar{flex-wrap:wrap;}
+  .btn{
+    padding:10px 22px;
+    font-size:14px;
+    margin:5px;
+  }
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="toggle" onclick="toggleMode()">🌙 Mode</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="#about" class="btn">About</a>
+  <a href="#projects" class="btn">Projects</a>
+  <a href="#contact" class="btn">Contact</a>
+</div>
+
+<header class="hero reveal">
+  <h1>Hi, I'm <span>Abdullah Rasheed</span></h1>
+  <h2>Frontend Web Developer</h2>
+  <p>I build modern, responsive & user-friendly websites using HTML, CSS and JavaScript.</p>
+</header>
+
+<!-- ABOUT WITH MORE DETAILS -->
+<section id="about" class="reveal">
+<h2>About Me</h2>
+<p style="text-align:center;max-width:750px;margin:auto;line-height:1.7;">
+I am a passionate <strong>Beginner Frontend Web Developer</strong> focused on creating
+clean, modern and responsive websites. I enjoy turning ideas into real web experiences
+using <strong>HTML, CSS and JavaScript</strong>.<br><br>
+
+I have strong interest in <strong>UI/UX design</strong>, animations and mobile-first
+development. I am continuously learning new frontend technologies and improving my
+coding skills by building real projects.<br><br>
+
+My goal is to become a professional frontend developer and work on impactful,
+user-friendly web applications.
+</p>
+</section>
+
+<section class="reveal">
+<h2>Skills</h2>
+<div class="skills">
+  <div class="skill">HTML5</div>
+  <div class="skill">CSS3</div>
+  <div class="skill">JavaScript</div>
+  <div class="skill">Responsive Design</div>
+  <div class="skill">Git & GitHub</div>
+</div>
+</section>
+
+<section id="projects" class="reveal">
+<h2>My Projects</h2>
+
+<div class="card">
+  <h3>Personal Portfolio Website</h3>
+  <p>A modern responsive portfolio website to showcase skills and projects.</p>
+  <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+</div>
+
+<div class="card">
+  <h3>Landing Page Design</h3>
+  <p>Clean and modern landing page focused on UI/UX.</p>
+  <p><strong>Tech:</strong> HTML, CSS</p>
+</div>
+
+<div class="card">
+  <h3>Calculator Web App</h3>
+  <p>Simple calculator for basic arithmetic operations.</p>
+  <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<h2>Contact Me</h2>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="4" placeholder="Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<footer>© 2025 Abdullah Rasheed</footer>
+
+<a class="whatsapp" href="https://wa.me/92494154455" target="_blank">💬</a>
+
+<script>
+function toggleMode(){
+  document.body.classList.toggle("light");
+  localStorage.setItem("theme",
+    document.body.classList.contains("light") ? "light" : "dark"
+  );
+}
+
+window.onload = () => {
+  if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light");
+  }
+};
+
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
